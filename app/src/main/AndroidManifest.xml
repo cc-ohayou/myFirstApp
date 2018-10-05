@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.space.cc.myfirstapp">
+
+    <!--<uses-feature android:name="android.hardware.type.watch" />-->
+
+    <!--<uses-permission android:name="android.permission.WAKE_LOCK" />-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MyActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DisplayMessageActivity"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName="com.space.cc.myfirstapp.MyActivity">
+                <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.space.cc.myfirstapp.MyActivity"/>
+        </activity>
+
+      <!--
+       INSTALL_FAILED_MISSING_SHARED_LIBRARY  可能会出现此种错误 共享库不存在  自动生成activity文件时带上的
+       导致折腾了半天 注释掉即可
+       <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />-->
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+    </application>
+
+</manifest>
