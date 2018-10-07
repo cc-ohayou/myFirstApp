@@ -4,18 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MyActivity"
     tools:showIn="@layout/activity_my">
 
     <EditText
         android:id="@+id/edit_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:inputType="text"
         android:hint="@string/edit_message" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
         android:onClick="sendMessage"
         android:text="@string/button_send" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/hello_world"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
 
 </LinearLayout>

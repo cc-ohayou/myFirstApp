@@ -9,6 +9,10 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_display_message">My Message</string>
+    <string name="home_text">what  are you doing ha</string>
+    <string name="action_share">分享</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_more">更多</string>
 
     <!-- 当你在用户界面定义一个文本时，应该把每一个文本字符串列入资源文件。
     这样做的好处是：对于所有字符串值，字符串资源能够单独的修改，

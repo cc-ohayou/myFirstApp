@@ -26,7 +26,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,7 +34,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
                         .setAction("Action", null)
                         .show();
             }
-        });
+        });*/
+        //若要使用返回的按钮 需要调用setDisplayHomeAsUpEnabled()方法
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        不管用户导航到哪，每个Activity都是通过Intent被调用的。
 // 我们可以通过调用getIntent()来获取启动activity的Intent及其包含的数据
@@ -60,9 +61,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+      /*  if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
 

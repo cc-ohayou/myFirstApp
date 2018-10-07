@@ -2,37 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.space.cc.myfirstapp">
 
-    <!--<uses-feature android:name="android.hardware.type.watch" />-->
-
-    <!--<uses-permission android:name="android.permission.WAKE_LOCK" />-->
-
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".MyActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".DisplayMessageActivity"
-            android:label="@string/title_activity_display_message"
-            android:parentActivityName="com.space.cc.myfirstapp.MyActivity">
-                <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.space.cc.myfirstapp.MyActivity"/>
-        </activity>
-
-      <!--
+    <!--
        INSTALL_FAILED_MISSING_SHARED_LIBRARY  可能会出现此种错误 共享库不存在  自动生成activity文件时带上的
        导致折腾了半天 注释掉即可
        <uses-library
@@ -40,15 +10,63 @@
             android:required="true" />
         <uses-library
             android:name="com.google.android.wearable"
-            android:required="true" />-->
-        <!--
+            android:required="true" />
+    -->
+    <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
-        -->
-        <meta-data
-            android:name="com.google.android.wearable.standalone"
-            android:value="true" />
+    -->
 
+
+    <!-- 根节点<manifest>中的package属性指明清单文件所对应的应用程序包 -->
+    <!-- <uses-feature android:name="android.hardware.type.watch" /> -->
+    <!-- <uses-permission android:name="android.permission.WAKE_LOCK" /> -->
+    <!--
+<application>:定义与当前描述文件对应的应用程序的细节信息。
+    <activity>:相当于Windows编程里面的一个窗体（Form）。
+    android:name表示实现Activity的类，android:label表示用于显示的Activity的名字。
+    <intent-filter>子元素用于描述显示当前Activity在什么情况下被调用。 它里面的
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name="android.intent.category.LAUNCHER" />
+
+    这两项参数将我们的应用程序显示在手机应用程序的启动列表上，表示应用程序的入口，
+    使用的时候应该注意它们仅能够出现在一个Activity里面，这个Activity就是应用程序的主Activity。
+    -->
+    <!--
+   在这个清单文件里面还有一些没有出现，但以后会经常使用的元素：
+   <uses-permission>:指出应用程序正常运行所需的权限。
+    <permission>:为活动和服务声明权限，表示其他应用程序要使用当前应用程序的数据或逻辑必须具有的权限。
+    <instrumentation>:表示需要在关键系统事件中需要调用的代码。
+    <uses-library>：引入可选的Android组件，例如地图服务。
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+        <activity
+            android:name=".MyActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+
+            >
+            <!--android:theme="@style/AppTheme.NoActionBar">-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--<activity
+            android:name=".DisplayMessageActivity"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName=".MyActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.space.cc.myfirstapp.MyActivity" />
+        </activity>-->
     </application>
 
 </manifest>
