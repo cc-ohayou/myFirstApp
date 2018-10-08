@@ -23,7 +23,7 @@
     <!--Status bar color-->
     <color name="statusColor">#3C3F41</color>
     <!-- toolBar color -->
-    <color name="toolBarColor">#A0A09E</color>
+    <color name="toolBarColor">#7B655F</color>
     <!--EditText,RadioButton,CheckBox color-->
     <color name="editColor">#FD87A9</color>
     <!--Window color-->

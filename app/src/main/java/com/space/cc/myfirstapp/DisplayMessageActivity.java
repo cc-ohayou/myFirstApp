@@ -1,40 +1,32 @@
 package com.space.cc.myfirstapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class DisplayMessageActivity extends AppCompatActivity {
+    final String TAG="DisplayMessageActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .show();
-            }
-        });*/
         //若要使用返回的按钮 需要调用setDisplayHomeAsUpEnabled()方法
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        不管用户导航到哪，每个Activity都是通过Intent被调用的。
@@ -47,8 +39,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
 //        用setText()来设置文本字体大小和内容.
         textView.setTextSize(40);
         textView.setText(message);
+        textView.setTextColor(Color.parseColor("#3C3F41"));
 //        将TextView加入之前被标记为R.id.content的RelativeLayout中
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.msgcontent);
+            LinearLayout layout = (LinearLayout) findViewById(R.id.msgcontent);
         layout.addView(textView);
         }catch(Exception e){
             e.printStackTrace();
@@ -81,5 +74,44 @@ public class DisplayMessageActivity extends AppCompatActivity {
                     container, false);
             return rootView;
         }
+    }
+    @Override
+    protected void onStart() {
+        Log.e(TAG, "onStart");
+        super.onStart();
+    }
+
+
+
+    @Override
+    protected void onStop() {
+        Log.e(TAG, "onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.e(TAG, "onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.e(TAG, "onPause");
+
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.e(TAG, "onResume");
+
+        super.onResume();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.e(TAG, "onRestart");
+        super.onRestart();
     }
 }
