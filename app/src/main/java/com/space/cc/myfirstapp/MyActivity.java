@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
@@ -23,7 +24,7 @@ public class MyActivity extends AppCompatActivity implements View.OnClickListene
     Toolbar mToolbar;
     Toast mToast;
     PopupWindow mPopupWindow;
-
+    final String TAG="MainActivityLife";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,14 +92,14 @@ public class MyActivity extends AppCompatActivity implements View.OnClickListene
             }
         });
 
-      /*  FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });*/
+        });
     }
     /**
      * 弹出自定义的popWindow
@@ -198,6 +199,7 @@ public class MyActivity extends AppCompatActivity implements View.OnClickListene
         //在这个Intent构造函数中有两个参数：
         //第一个参数是Context(之所以用this是因为当前Activity是Context的子类)
         //接受系统发送Intent的应用组件的Class（在这个案例中，指将要被启动的activity）。
+        //此处是显式的启动activity 也可是通过设置 xml中activity的intent-filter满足特殊条件的activity才可以被启动
         Intent intent=new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
@@ -207,5 +209,47 @@ public class MyActivity extends AppCompatActivity implements View.OnClickListene
 //        调用startActivity()完成新activity的启动
         startActivity(intent);
 //        运行这个方法，系统收到我们的请求后会实例化在Intent中指定的Activity
+    }
+
+
+    @Override
+    protected void onStart() {
+        Log.e(TAG, "onStart");
+        super.onStart();
+    }
+
+
+
+    @Override
+    protected void onStop() {
+        Log.e(TAG, "onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.e(TAG, "onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.e(TAG, "onPause");
+
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.e(TAG, "onResume");
+
+        super.onResume();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.e(TAG, "onRestart");
+
+        super.onRestart();
     }
 }

@@ -16,8 +16,6 @@
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
     -->
-
-
     <!-- 根节点<manifest>中的package属性指明清单文件所对应的应用程序包 -->
     <!-- <uses-feature android:name="android.hardware.type.watch" /> -->
     <!-- <uses-permission android:name="android.permission.WAKE_LOCK" /> -->
@@ -49,24 +47,26 @@
             android:name=".MyActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme"
+            android:background="@drawable/yy_backound">
 
-            >
-            <!--android:theme="@style/AppTheme.NoActionBar">-->
+            <!-- android:theme="@style/AppTheme.NoActionBar"> -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
+        <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
             android:parentActivityName=".MyActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme"
+            android:background="@drawable/yy_backound">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.space.cc.myfirstapp.MyActivity" />
-        </activity>-->
+        </activity>
+        <activity android:name=".IconDisplay"></activity>
     </application>
 
 </manifest>
