@@ -39,17 +39,18 @@
     -->
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_icon2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/app_icon2"
         android:supportsRtl="true">
+
+        <!--
         <activity
             android:name=".MyActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"
-            android:background="@drawable/yy_backound">
+            android:theme="@style/AppTheme">
 
-            <!-- android:theme="@style/AppTheme.NoActionBar"> -->
+            &lt;!&ndash; android:theme="@style/AppTheme.NoActionBar"> &ndash;&gt;
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,13 +61,31 @@
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
             android:parentActivityName=".MyActivity"
-            android:theme="@style/AppTheme"
-            android:background="@drawable/yy_backound">
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.space.cc.myfirstapp.MyActivity" />
         </activity>
-        <activity android:name=".IconDisplay"></activity>
+        <activity android:name=".IconDisplay" />
+        -->
+        <!--
+   注册活动是必须的  创建activity文件时android studio会自动生成此处的activity标签
+   .FirstActivity 只不过是com.space.cc.myfirstapp.FirstActivity的缩写
+     manifest文件头的package属性已经制定好了包路径所以可以直接使用缩写
+     注意活动必须指定主题
+        -->
+        <activity
+            android:name=".FirstActivity"
+            android:label="@string/first_app_label"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SecondActivity"
+            android:theme="@style/Theme.AppCompat.Light"></activity>
     </application>
 
 </manifest>

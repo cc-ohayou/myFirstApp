@@ -35,14 +35,18 @@ public class DisplayMessageActivity extends AppCompatActivity {
 //        调用 getStringExtra()提取从 MyActivity 传递过来的消息.
         String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
 //        在onCreate()方法中创建一个对象TextView
-        TextView textView = new TextView(this);
+        TextView textView = findViewById(R.id.textDisplay);
 //        用setText()来设置文本字体大小和内容.
-        textView.setTextSize(40);
         textView.setText(message);
-        textView.setTextColor(Color.parseColor("#3C3F41"));
 //        将TextView加入之前被标记为R.id.content的RelativeLayout中
-            LinearLayout layout = (LinearLayout) findViewById(R.id.msgcontent);
-        layout.addView(textView);
+            FloatingActionButton fab = findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Snackbar.make(view, "Replace with your own action display flb", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            });
         }catch(Exception e){
             e.printStackTrace();
         }
